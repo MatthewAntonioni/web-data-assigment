@@ -39,6 +39,24 @@ String hypertree = convert(root,0);
 System.out.println("\nweboql hypertree: ");
 System.out.println(hypertree);
 
+Element body = doc.body();
+
+System.out.println("\nPRIME (`): ");
+prime(body);
+
+System.out.println("\nHEAD (&): ");
+head(body);
+
+System.out.println("\nTAIL (!): ");
+tail(body);
+
+System.out.println("\nSIMPLE TREE: ");
+if(!body.children().isEmpty()){
+
+simpleTree(body.child(0));
+
+}
+
 scan.close();
 }
 
@@ -99,7 +117,7 @@ public static String convert(Element element, int depth) {
                     .append("\"]");
             }
         }
-    } // FOR LOOP ENDS HERE
+    } 
 
     // Attach the completed subtree
     if (children.length() > 0) {
@@ -122,5 +140,43 @@ public static String escape(String value){
     return value.replace("\\", "\\\\").replace("\"", "\\\"").replace("\n", " ");
 
 }
+
+public static void prime(Element element){
+
+for (Element child : element.children()){
+
+    System.out.println(convert(child, 0));
+
+}
+
+}
+
+public static void head(Element element){
+
+if (!element.children().isEmpty()){
+
+System.out.println(convert(element.child(0), 0));
+
+}
+
+}
+
+public static void simpleTree(Element element){
+
+System.out.println(convert(element,0));
+
+}
+
+public static void tail(Element element){
+
+for(int i = 1; i < element.childrenSize(); i++){
+
+    System.out.println(convert(element.child(i), 0));
+
+}
+
+}
+
+
 
 }
