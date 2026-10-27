@@ -7,3 +7,9 @@ or if on my laptop run
 & "C:\Users\zanma\apache-maven-3.10.0-bin\apache-maven-3.10.0\bin\mvn.cmd" clean compile exec:java "-Dexec.mainClass=main"
 
 if you try to run through the run button it will cause a main not found exception 
+
+you need to install maven to use this program and alter your prefernce: open user settings json (get here by crtl + shift + p in vs code) 
+and add the maven excution paththen run one of the commands above replacing the 
+C:\Users\zanma part with the file path to where you extracted your maven install
+
+you also need jdk 25 for the pom.xml to work 
