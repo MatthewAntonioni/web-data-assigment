@@ -1,0 +1,5 @@
+to run the progranm you need to open the terminal and enter this command
+
+& "C:\Users\zanma\apache-maven-3.10.0-bin\apache-maven-3.10.0\bin\mvn.cmd" clean compile exec:java "-Dexec.mainClass=main"
+
+if you try to run through the run button it will cause a main not found exception 
